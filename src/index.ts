@@ -5,3 +5,5 @@ function someFn(arg: number) {
 someFn(5);
 
 export default someFn;
+
+alert('qweqwe');
