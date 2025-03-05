@@ -1,17 +1,17 @@
-import React from 'react';
-import Counter from './components/Counter';
+import { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import AboutPage from "./pages/AboutPage/index.async";
+import MainPage from "./pages/MainPage/index.async";
 
 function App() {
   return (
-    <div>
-      <div>
-        <h1>React TypeScript Webpack Starter Template</h1>
-        <p>
-          This is a template for a React TypeScript project. It includes
-          Webpack, ESLint, Prettier, and Husky.
-        </p>
-      </div>
-      <Counter />
+    <div className="app">
+      <Suspense fallback>
+        <Routes>
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/" element={<MainPage />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }
