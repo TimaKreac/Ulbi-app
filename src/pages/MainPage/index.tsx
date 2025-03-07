@@ -1,6 +1,3 @@
-import { useNavigate } from "react-router-dom";
+import MainPage from "./ui/MainPage.async";
 
-export default function MainPage() {
-  const navigate = useNavigate();
-  return <div onClick={() => navigate("/about")}>MainPage</div>;
-}
+export default MainPage;

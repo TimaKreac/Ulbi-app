@@ -1,3 +1,3 @@
-export default function AboutPage() {
-  return <div>AboutPage</div>;
-}
+import AboutPage from "./ui/AboutPage.async";
+
+export default AboutPage;
