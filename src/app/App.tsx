@@ -1,8 +1,5 @@
 import { useTheme } from "app/providers/ThemeProvider";
-import AboutPage from "pages/AboutPage";
-import MainPage from "pages/MainPage";
-import { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { AppRouter } from "./providers/router";
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -10,12 +7,7 @@ function App() {
   return (
     <div className="app" data-theme={theme}>
       <button onClick={toggleTheme}>Toggle Theme</button>
-      <Suspense fallback>
-        <Routes>
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/" element={<MainPage />} />
-        </Routes>
-      </Suspense>
+      <AppRouter />
     </div>
   );
 }
